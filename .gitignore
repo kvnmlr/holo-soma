@@ -5,6 +5,9 @@
 [Bb]uilds/
 Assets/AssetStoreTools*
 
+# MRTK
+Assets/HoloToolkit
+
 # Visual Studio cache directory
 .vs/
 
