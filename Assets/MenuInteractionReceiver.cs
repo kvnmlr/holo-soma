@@ -17,36 +17,63 @@ namespace UMTL.MixedReality
 
         protected override void FocusEnter(GameObject obj, PointerSpecificEventData eventData)
         {
-            Debug.Log(obj.name + " : FocusEnter");
+            if (obj != null)
+            {
+                Debug.Log(obj.name + " : FocusEnter");
+            }
         }
 
         protected override void FocusExit(GameObject obj, PointerSpecificEventData eventData)
         {
-            Debug.Log(obj.name + " : FocusExit");
+            if (obj != null)
+            {
+                Debug.Log(obj.name + " : FocusExit");
+            }
         }
 
         protected override void InputDown(GameObject obj, InputEventData eventData)
         {
-            Debug.Log(obj.name + " : InputDown");
+            if (obj != null)
+            {
+                Debug.Log(obj.name + " : InputDown");
+            }
         }
 
         protected override void InputUp(GameObject obj, InputEventData eventData)
         {
-            Debug.Log(obj.name + " : InputUp");
-            switch (obj.name)
+            if (obj != null)
             {
-                case "BasicCubeButton":
-                    Debug.Log("Starting Basic Cube Demo");
-                    GameController.Instance.StartBasicRoutine();
-                    break;
-                default:
-                    break;
+                Debug.Log(obj.name + " : InputUp");
+                switch (obj.name)
+                {
+                    case "BasicCubeButton":
+                        Debug.Log("Starting Basic Cube Demo");
+                        GameController.Instance.StartBasicRoutine();
+                        break;
+                    case "LargeCubeButton":
+                        Debug.Log("Starting Basic Cube Demo");
+                        GameController.Instance.StartBasicRoutine();
+                        break;
+                    case "FancyCubeButton":
+                        Debug.Log("Starting Basic Cube Demo");
+                        GameController.Instance.StartBasicRoutine();
+                        break;
+                    case "BasicMenuButton":
+                        Debug.Log("Starting Basic Cube Demo");
+                        GameController.Instance.WorkspacePlaced();
+                        break;
+                    default:
+                        break;
+                }
             }
         }
 
         protected override void InputClicked(GameObject obj, InputClickedEventData eventData)
         {
-            Debug.Log(obj.name + " : InputClicked");   
+            if (obj != null)
+            {
+                Debug.Log(obj.name + " : InputClicked");
+            }
         }
     }
 }

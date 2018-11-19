@@ -1,9 +1,11 @@
 ﻿using HoloToolkit.Unity.InputModule;
+using HoloToolkit.Unity;
 using UnityEngine;
 
 public class BasicCubeController : MonoBehaviour, IInputClickHandler, IInputHandler
 {
     public GameObject[] pieces;
+    public GameObject win;
 
     private int currentPiece = -1;
 
@@ -13,18 +15,19 @@ public class BasicCubeController : MonoBehaviour, IInputClickHandler, IInputHand
     }
     void OnEnable()
     {
+        win.SetActive(false);
         resetPieces();
     }
 
-    public void OnInputClicked(InputClickedEventData eventData)
+    public virtual void OnInputClicked(InputClickedEventData eventData)
     {
+        SoundManager.Instance.playTap();
+        nextPiece();
     }
     public void OnInputDown(InputEventData eventData)
     { }
     public void OnInputUp(InputEventData eventData)
-    {
-        nextPiece();
-    }
+    { }
 
     private void resetPieces()
     {
@@ -40,6 +43,8 @@ public class BasicCubeController : MonoBehaviour, IInputClickHandler, IInputHand
             updatePieces();
         } else
         {
+            SoundManager.Instance.playSuccess();
+            win.SetActive(true);
             resetPieces();
         }
     }
@@ -58,6 +63,7 @@ public class BasicCubeController : MonoBehaviour, IInputClickHandler, IInputHand
         Debug.Log("Showing piece #" + currentPiece);
         for (int i = 0; i <= currentPiece; ++i)
         {
+            win.SetActive(false);
             pieces[i].SetActive(true);
         }
         for (int i = currentPiece + 1; i < pieces.Length; ++i)
