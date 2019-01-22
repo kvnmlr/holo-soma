@@ -6,6 +6,7 @@ public class BasicCubeController : MonoBehaviour, IInputClickHandler, IInputHand
 {
     public GameObject[] pieces;
     public GameObject win;
+    public GameObject cursor;
 
     private int currentPiece = -1;
 
@@ -37,6 +38,7 @@ public class BasicCubeController : MonoBehaviour, IInputClickHandler, IInputHand
 
     private void nextPiece()
     {
+        cursor.SetActive(false);
         if (currentPiece < pieces.Length - 1)
         {
             currentPiece++;
@@ -44,6 +46,7 @@ public class BasicCubeController : MonoBehaviour, IInputClickHandler, IInputHand
         } else
         {
             SoundManager.Instance.playSuccess();
+            cursor.SetActive(true);
             win.SetActive(true);
             resetPieces();
         }

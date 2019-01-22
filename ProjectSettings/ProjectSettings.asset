@@ -20,7 +20,7 @@ PlayerSettings:
   m_ShowUnitySplashLogo: 1
   m_SplashScreenOverlayOpacity: 1
   m_SplashScreenAnimation: 1
-  m_SplashScreenLogoStyle: 1
+  m_SplashScreenLogoStyle: 0
   m_SplashScreenDrawMode: 0
   m_SplashScreenBackgroundAnimationZoom: 1
   m_SplashScreenLogoAnimationZoom: 1
@@ -39,7 +39,8 @@ PlayerSettings:
     width: 1
     height: 1
   m_SplashScreenLogos: []
-  m_VirtualRealitySplashScreen: {fileID: 0}
+  m_VirtualRealitySplashScreen: {fileID: 2800000, guid: 8afd9000ddd82fc48a3dfb9a695f7348,
+    type: 3}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1024
   defaultScreenHeight: 768
@@ -571,8 +572,13 @@ PlayerSettings:
   metroCertificateIssuer: DefaultCompany
   metroCertificateNotAfter: 00d43856d289d501
   metroApplicationDescription: soma-cube
-  wsaImages: {}
-  metroTileShortName: Soma Cube Demo
+  wsaImages:
+    2031816: Assets/Logos/88.png
+    2097352: Assets/Logos/142.png
+    2162888: Assets/Logos/300.png
+    2228424: Assets/Logos/620.png
+    2293960: Assets/Logos/310.png
+  metroTileShortName: Soma Cube
   metroCommandLineArgsFile: 
   metroTileShowName: 0
   metroMediumTileShowName: 0
